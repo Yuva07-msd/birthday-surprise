@@ -1,0 +1,97 @@
+*{
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+body{
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle, #ff9a9e, #fad0c4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+.screen{
+    text-align: center;
+}
+.hidden{
+    display: none;
+}
+input {
+    padding: 12px;
+    border-radius: 50px;
+    border: none;
+    font-size: 16px;
+}
+button{
+    padding: 12px 25px;
+    margin-top: 15px;   
+    border-radius: 25px;
+    border: none;
+    background: #ff4081;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+button:hover{
+    transform: scale(1.1)
+}
+.card{
+    width: 300px;
+    height: 400px;
+    perspective: 1000px;
+}
+.card-inner{
+    width: 100%;
+    height: 100%;
+    transition: 1.1s;
+    transform-style: preserve-3d;
+}
+.card:hover .card-inner{
+    transform: rotateY(180deg);
+}
+.card-front , .card-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    border-radius: 25px;
+    justify-content: center;
+    align-items: center;
+    backface-visibility: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+}
+.card-front{
+     background: #ff4081;
+    color: white;
+    font-size: 24px;
+}
+.card-back{
+      background: white;
+    transform: rotateY(180deg);
+    flex-direction: column;
+    padding: 20px;
+}
+.cake img {
+    width: 150px;
+}
+.flame {
+    font-size: 30px;
+    cursor: pointer;
+    animation: flicker 0.3s infinite alternate;
+}
+
+@keyframes flicker {
+    from { transform: scale(1); }
+    to { transform: scale(1.2); }
+}
+
+#fireworks{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    pointer-events: none;
+}
