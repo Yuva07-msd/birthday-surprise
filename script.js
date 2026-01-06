@@ -29,8 +29,9 @@ function startsuprise() {
             countdown.classList.add("hidden");
             main.classList.remove("hidden");
             createConfetti();
+            startFireworks();
         }
-    }, 1000);
+    }, 500);
 }
 
 function blowcandle() {
@@ -64,10 +65,6 @@ function createConfetti() {
     }
 }
 
-function randomColor() {
-    return ["#ff4081", "#ffc107", "#4caf50", "#2196f3"]
-        [Math.floor(Math.random() * 4)];
-}
 
 const style = document.createElement("style");
 style.innerHTML = `
@@ -78,3 +75,82 @@ style.innerHTML = `
 }`;
 document.head.appendChild(style);
 
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
+
+class Firework {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.particles = [];
+        for (let i = 0; i < 80; i++) {
+            this.particles.push(new Particle(x, y));
+        }
+    }
+
+    update() {
+        this.particles.forEach(p => p.update());
+    }
+
+    draw() {
+        this.particles.forEach(p => p.draw());
+    }
+}
+
+class Particle {
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
+        this.radius = 2;
+        this.color = randomColor();
+        this.angle = Math.random() * Math.PI * 2;
+        this.speed = Math.random() * 5 + 2;
+        this.life = 100;
+    }
+
+    update() {
+        this.x += Math.cos(this.angle) * this.speed;
+        this.y += Math.sin(this.angle) * this.speed;
+        this.life--;
+    }
+
+    draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fillStyle = this.color;
+        ctx.fill();
+    }
+}
+
+let fireworks = [];
+
+function createFirework() {
+    const x = Math.random() * canvas.width;
+    const y = Math.random() * canvas.height / 2;
+    fireworks.push(new Firework(x, y));
+}
+
+function animateFireworks() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    fireworks.forEach((fw, index) => {
+        fw.update();
+        fw.draw();
+
+        if (fw.particles[0].life <= 0) {
+            fireworks.splice(index, 1);
+        }
+    });
+
+    requestAnimationFrame(animateFireworks);
+}
+
+function startFireworks() {
+    setInterval(createFirework, 800);
+    animateFireworks();
+}
