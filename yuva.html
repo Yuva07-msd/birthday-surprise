@@ -858,7 +858,7 @@ for(let i=0;i<24;i++){
 }
 
 /* ── PIN GATE ── */
-const SECRET='1234'; // ← change to birthday date e.g. '1506'
+const SECRET='0525'; // ← change to birthday date e.g. '1506'
 let pin='';
 function kp(d){if(pin.length>=4)return;pin+=d;udots();if(pin.length===4)setTimeout(ksub,200);}
 function kclr(){pin='';udots();document.getElementById('perr').classList.remove('on');}
