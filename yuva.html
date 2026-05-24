@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no"/>
+<title>For 💖Manisha💖 💛</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Inter:wght@100;200;300;400&display=swap" rel="stylesheet"/>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+:root{
+  --bg:#06050400;
+  --g:#c8a84b;
+  --gl:#e6d09a;
+  --w:#f0ebe0;
+  --dim:rgba(240,235,224,0.38);
+  --ease:cubic-bezier(0.76,0,0.24,1);
+}
+html,body{width:100%;height:100%;overflow:hidden;background:#06050400;}
+body{
+  background:radial-gradient(ellipse at 50% 0%,#1a1205 0%,#050403 60%);
+  color:var(--w);font-family:'Inter',sans-serif;font-weight:200;
+  -webkit-font-smoothing:antialiased;
+}
+
+/* GRAIN */
+#grain{position:fixed;inset:0;z-index:9000;pointer-events:none;opacity:0.04;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:gr .5s steps(2) infinite;}
+@keyframes gr{0%{transform:translate(0,0)}50%{transform:translate(-2px,2px)}100%{transform:translate(2px,-2px)}}
+
+/* WIPE TRANSITION */
+#wipe{
+  position:fixed;inset:0;z-index:8000;background:#050403;pointer-events:none;
+  clip-path:polygon(0 100%,100% 100%,100% 100%,0 100%);
+  transition:clip-path .6s var(--ease);
+}
+#wipe.in{clip-path:polygon(0 0,100% 0,100% 100%,0 100%);}
+#wipe.out{clip-path:polygon(0 0,100% 0,100% 0%,0 0%);transition:clip-path .55s .05s var(--ease);}
+
+/* PASSWORD GATE */
+#gate{
+  position:fixed;inset:0;z-index:7000;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  background:#050403;overflow:hidden;
+  transition:opacity .9s var(--ease);
+}
+#gate.exit{opacity:0;transform:scale(1.04);pointer-events:none;transition:opacity .9s var(--ease),transform .9s var(--ease);}
+
+/* Gate rings */
+.grings{position:absolute;inset:0;pointer-events:none;}
+.gr-r{
+  position:absolute;border-radius:50%;
+  border:1px solid rgba(200,168,75,0.07);
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  animation:grPulse 6s ease-in-out infinite;
+}
+.gr-r:nth-child(1){width:200px;height:200px;animation-delay:0s;}
+.gr-r:nth-child(2){width:320px;height:320px;animation-delay:1.2s;}
+.gr-r:nth-child(3){width:450px;height:450px;animation-delay:2.4s;}
+.gr-r:nth-child(4){width:600px;height:600px;animation-delay:3.6s;}
+@keyframes grPulse{0%,100%{opacity:0.04;}50%{opacity:0.15;}}
+
+/* Gate orb */
+.gorb{
+  position:absolute;width:220px;height:220px;border-radius:50%;
+  background:radial-gradient(circle at 38% 35%,rgba(200,168,75,0.22) 0%,rgba(200,168,75,0.05) 50%,transparent 70%);
+  top:50%;left:50%;transform:translate(-50%,-55%);
+  animation:orbFloat 5s ease-in-out infinite;
+}
+@keyframes orbFloat{0%,100%{transform:translate(-50%,-55%);}50%{transform:translate(-50%,-50%);}}
+
+.gate-content{position:relative;z-index:1;display:flex;flex-direction:column;align-items:center;gap:0;padding:0 2rem;}
+.g-eyebrow{font-size:0.48rem;letter-spacing:0.5em;text-transform:uppercase;color:var(--g);opacity:0.6;margin-bottom:1rem;}
+.g-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(2.2rem,11vw,3.8rem);font-weight:300;font-style:italic;
+  text-align:center;line-height:1.05;margin-bottom:0.4rem;
+  text-shadow:0 0 60px rgba(200,168,75,0.1);
+}
+.g-sub{font-size:0.6rem;letter-spacing:0.15em;color:var(--dim);margin-bottom:2rem;text-align:center;}
+
+/* PIN */
+.pin-ui{display:flex;flex-direction:column;align-items:center;gap:1.2rem;}
+.pdots{display:flex;gap:0.9rem;}
+.pd{width:9px;height:9px;border-radius:50%;border:1px solid rgba(200,168,75,0.3);background:transparent;transition:all .3s;}
+.pd.f{background:var(--g);transform:scale(1.3);box-shadow:0 0 8px rgba(200,168,75,0.45);}
+.pad{display:grid;grid-template-columns:repeat(3,1fr);gap:0.55rem;width:195px;}
+.pk{
+  height:52px;border:1px solid rgba(200,168,75,0.1);background:transparent;
+  color:var(--w);font-family:'Inter',sans-serif;font-size:1.05rem;font-weight:200;
+  cursor:pointer;transition:all .22s;position:relative;overflow:hidden;border-radius:2px;
+  -webkit-tap-highlight-color:transparent;
+}
+.pk::after{content:'';position:absolute;inset:0;background:rgba(200,168,75,0.06);opacity:0;transition:opacity .22s;}
+.pk:active::after{opacity:1;}
+.pk:active{transform:scale(0.93);border-color:rgba(200,168,75,0.3);}
+.pk.sp{font-size:0.52rem;letter-spacing:0.1em;color:var(--dim);}
+.pk.en{color:var(--g);border-color:rgba(200,168,75,0.22);font-size:1.2rem;}
+.p-hint{font-size:0.48rem;letter-spacing:0.2em;color:rgba(200,168,75,0.28);text-transform:uppercase;}
+.p-err{font-size:0.58rem;color:#e07070;letter-spacing:0.06em;opacity:0;transition:opacity .3s;min-height:1em;}
+.p-err.on{opacity:1;}
+@keyframes shakeDots{0%,100%{transform:translateX(0);}20%,60%{transform:translateX(-6px);}40%,80%{transform:translateX(6px);}}
+.pdots.shake{animation:shakeDots .45s;}
+
+/* MAIN SITE */
+#site{
+  position:fixed;inset:0;opacity:0;pointer-events:none;
+  transition:opacity 1.2s .3s var(--ease);
+}
+#site.show{opacity:1;pointer-events:all;}
+
+/* TOP NAV */
+#tnav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:1rem 1.4rem;
+  background:linear-gradient(to bottom,rgba(5,4,3,0.95),transparent);
+}
+.tlogo{font-family:'Cormorant Garamond',serif;font-size:0.95rem;font-style:italic;color:var(--g);letter-spacing:0.06em;}
+.tmenu{display:flex;gap:1.2rem;}
+.tmenu button{
+  background:none;border:none;color:rgba(240,235,224,0.35);
+  font-family:'Inter',sans-serif;font-size:0.48rem;
+  letter-spacing:0.2em;text-transform:uppercase;cursor:pointer;
+  transition:color .3s;padding:0.2rem 0;
+  -webkit-tap-highlight-color:transparent;
+}
+.tmenu button.on{color:var(--g);}
+
+/* BOTTOM NAV dots */
+#bnav{
+  position:fixed;bottom:1.4rem;left:50%;transform:translateX(-50%);
+  display:flex;gap:0.5rem;z-index:500;
+  background:rgba(5,4,3,0.5);padding:0.5rem 0.8rem;border-radius:20px;
+  border:1px solid rgba(200,168,75,0.1);backdrop-filter:blur(8px);
+}
+.bd{width:6px;height:6px;border-radius:50%;background:rgba(200,168,75,0.2);transition:all .4s;cursor:pointer;}
+.bd.on{background:var(--g);transform:scale(1.4);}
+
+/* REEL */
+#reel{position:fixed;inset:0;transition:transform 1.05s var(--ease);will-change:transform;}
+.pg{position:absolute;left:0;right:0;height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;}
+
+/* REVEAL SYSTEM */
+.up{opacity:0;transform:translateY(35px);transition:opacity .85s var(--ease),transform .85s var(--ease);}
+.up.d1{transition-delay:.08s;}.up.d2{transition-delay:.18s;}.up.d3{transition-delay:.3s;}
+.up.d4{transition-delay:.44s;}.up.d5{transition-delay:.58s;}
+.pg.alive .up{opacity:1;transform:translateY(0);}
+.sc{opacity:0;transform:scale(0.94);transition:opacity .9s var(--ease),transform .9s var(--ease);}
+.pg.alive .sc{opacity:1;transform:scale(1);}
+.lg{width:0;height:1px;background:linear-gradient(to right,transparent,var(--g),transparent);transition:width 1s .35s var(--ease);}
+.pg.alive .lg{width:55px;}
+
+/* shared labels */
+.slb{font-size:0.46rem;letter-spacing:0.44em;text-transform:uppercase;color:var(--g);opacity:0.55;margin-bottom:0.5rem;text-align:center;}
+.stl{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,7vw,2.6rem);font-weight:300;font-style:italic;text-align:center;margin-bottom:0.6rem;}
+
+/* PAGE COUNTER */
+#pctr{position:fixed;bottom:3.5rem;right:1.2rem;font-family:'Cormorant Garamond',serif;font-size:0.75rem;font-style:italic;color:rgba(200,168,75,0.25);z-index:500;}
+
+/* ═══════ PAGE 0 — HERO ═══════ */
+#pg0{
+  background:transparent;
+  text-align:center;padding:5rem 1.5rem 5rem;
+}
+/* Spinning rings on hero */
+.hrings{position:absolute;inset:0;pointer-events:none;}
+.hr{position:absolute;border-radius:50%;border:1px solid rgba(200,168,75,0.06);top:50%;left:50%;transform:translate(-50%,-50%);animation:hrSpin linear infinite;}
+.hr:nth-child(1){width:55vw;height:55vw;animation-duration:20s;}
+.hr:nth-child(2){width:80vw;height:80vw;animation-duration:32s;animation-direction:reverse;}
+.hr:nth-child(3){width:108vw;height:108vw;animation-duration:45s;}
+.hr:nth-child(4){width:140vw;height:140vw;animation-duration:60s;animation-direction:reverse;}
+@keyframes hrSpin{from{transform:translate(-50%,-50%) rotate(0deg);}to{transform:translate(-50%,-50%) rotate(360deg);}}
+
+/* floating gold sparks */
+.sp{position:absolute;border-radius:50%;background:var(--g);pointer-events:none;opacity:0;animation:spF linear infinite;}
+@keyframes spF{0%{opacity:0;transform:translate(0,0) scale(0);}10%{opacity:.7;}85%{opacity:.25;}100%{opacity:0;transform:translate(var(--tx),calc(-55vh)) scale(.2);}}
+
+.h-eye{font-size:0.48rem;letter-spacing:0.52em;text-transform:uppercase;color:var(--g);opacity:0.6;position:relative;z-index:1;}
+.h-main{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3.5rem,16vw,6rem);
+  font-weight:300;font-style:italic;color:var(--w);
+  line-height:0.95;position:relative;z-index:1;
+  text-shadow:0 0 100px rgba(200,168,75,0.12);
+  letter-spacing:-0.01em;
+}
+.h-main em{color:var(--g);}
+.h-yr{font-size:0.62rem;font-weight:100;letter-spacing:0.4em;color:var(--dim);margin-top:0.5rem;position:relative;z-index:1;}
+.h-div{margin:1.2rem auto;position:relative;z-index:1;}
+.h-desc{max-width:300px;font-size:0.76rem;line-height:2;color:rgba(240,235,224,0.45);position:relative;z-index:1;}
+.h-cta{
+  margin-top:1.8rem;display:inline-flex;align-items:center;gap:0.7rem;
+  border:1px solid rgba(200,168,75,0.35);padding:0.75rem 1.8rem;
+  font-size:0.5rem;letter-spacing:0.26em;text-transform:uppercase;
+  color:var(--g);cursor:pointer;background:transparent;font-family:'Inter',sans-serif;
+  transition:all .4s;position:relative;z-index:1;overflow:hidden;border-radius:1px;
+}
+.h-cta::before{content:'';position:absolute;inset:0;background:var(--g);transform:translateX(-101%);transition:transform .4s var(--ease);z-index:0;}
+.h-cta:active::before{transform:translateX(0);}
+.h-cta:active{color:#050403;}
+.h-cta span,.h-cta .arr{position:relative;z-index:1;}
+/* Scroll cue */
+.scue{position:absolute;bottom:4.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:.3rem;opacity:0;animation:fIn 1s 2.5s forwards;}
+@keyframes fIn{to{opacity:1;}}
+.sl{width:1px;height:42px;overflow:hidden;position:relative;}
+.sl::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,transparent,var(--g),transparent);animation:sd 1.8s ease-in-out infinite;}
+@keyframes sd{0%{transform:translateY(-100%);}100%{transform:translateY(100%);}}
+.st{font-size:0.42rem;letter-spacing:0.26em;text-transform:uppercase;color:rgba(200,168,75,0.35);}
+
+/* ═══════ PAGE 1 — GALLERY ═══════ */
+#pg1{padding:5rem 1rem 5rem;background:radial-gradient(ellipse at 50% 100%,#120d06 0%,#060403 70%);}
+.gal-wrap{width:100%;}
+
+/* CINEMATIC PHOTO STRIP */
+.film-strip{
+  position:relative;overflow:hidden;width:100%;height:220px;margin-bottom:.8rem;
+}
+.film-track{
+  display:flex;gap:8px;height:100%;
+  animation:filmSlide 18s linear infinite;
+  width:max-content;
+}
+.film-track:hover{animation-play-state:paused;}
+@keyframes filmSlide{0%{transform:translateX(0);}100%{transform:translateX(-50%);}};
+
+.fphoto{
+  flex-shrink:0;width:150px;height:100%;position:relative;overflow:hidden;
+  border:1px solid rgba(200,168,75,0.12);
+  background:linear-gradient(135deg,#1a1209,#241a0c);
+}
+.fphoto-inner{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.4rem;}
+.fpi{font-size:1.4rem;opacity:0.15;}
+.fpl{font-size:0.38rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--gl);opacity:0.18;}
+.fphoto img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+
+/* shimmer on photos */
+.fphoto::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(105deg,transparent 40%,rgba(200,168,75,0.08) 50%,transparent 60%);
+  animation:shimmer 3s ease-in-out infinite;z-index:1;pointer-events:none;
+}
+@keyframes shimmer{0%,100%{opacity:0;transform:translateX(-100%);}50%{opacity:1;transform:translateX(100%);}}
+
+/* Golden frame photos grid */
+.gal-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;}
+.gc{position:relative;overflow:hidden;aspect-ratio:1;
+  background:linear-gradient(135deg,#161008,#201708);
+  border:1px solid rgba(200,168,75,0.1);
+}
+.gc::after{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(200,168,75,0.05),transparent,rgba(200,168,75,0.05));
+  animation:gcGlow 4s ease-in-out infinite;
+}
+@keyframes gcGlow{0%,100%{opacity:0;}50%{opacity:1;}}
+.gc-in{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.3rem;transition:transform .6s var(--ease);}
+.gc:active .gc-in{transform:scale(1.06);}
+.gc img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;transition:transform .6s var(--ease);}
+.gc:active img{transform:scale(1.07);}
+.gc-ico{font-size:1.2rem;opacity:0.15;}
+.gc-lb{font-size:0.36rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gl);opacity:.18;}
+/* featured slot */
+.gc:first-child{grid-column:span 2;aspect-ratio:2/1;}
+/* corner accents */
+.gc::before{
+  content:'';position:absolute;inset:0;pointer-events:none;z-index:2;
+  background:
+    linear-gradient(to right,rgba(200,168,75,0.35) 1px,transparent 1px) 0 0/10px 10px no-repeat,
+    linear-gradient(to bottom,rgba(200,168,75,0.35) 1px,transparent 1px) 0 0/10px 10px no-repeat,
+    linear-gradient(to left,rgba(200,168,75,0.35) 1px,transparent 1px) 100% 100%/10px 10px no-repeat,
+    linear-gradient(to top,rgba(200,168,75,0.35) 1px,transparent 1px) 100% 100%/10px 10px no-repeat;
+}
+
+/* photo lightbox */
+#lb{position:fixed;inset:0;z-index:6500;background:rgba(5,4,3,0.96);display:none;
+  align-items:center;justify-content:center;flex-direction:column;gap:1rem;
+  animation:lbIn .4s ease;}
+@keyframes lbIn{from{opacity:0;}to{opacity:1;}}
+#lb.open{display:flex;}
+#lb-img{max-width:90vw;max-height:70vh;object-fit:contain;border:1px solid rgba(200,168,75,0.2);}
+#lb-close{position:absolute;top:1.2rem;right:1.5rem;font-size:1.5rem;color:var(--g);cursor:pointer;background:none;border:none;}
+
+/* ═══════ PAGE 2 — VIDEO ═══════ */
+#pg2{padding:5rem 1.2rem 5rem;background:radial-gradient(ellipse at 50% 40%,#1c1208 0%,#060403 65%);}
+.v-wrap{width:100%;}
+.v-frame{border:1px solid rgba(200,168,75,0.15);position:relative;overflow:hidden;}
+
+/* animated border on video */
+.v-frame::before,.v-frame::after{
+  content:'';position:absolute;z-index:2;pointer-events:none;
+}
+.v-frame::before{
+  top:0;left:0;right:0;bottom:0;
+  background:linear-gradient(90deg,transparent,rgba(200,168,75,0.08),transparent);
+  animation:vScan 3s ease-in-out infinite;
+}
+@keyframes vScan{0%,100%{transform:translateX(-100%);}50%{transform:translateX(100%);}}
+
+/* headphone gate */
+#hpg{
+  aspect-ratio:16/9;display:flex;flex-direction:column;
+  align-items:center;justify-content:center;gap:.75rem;
+  background:linear-gradient(135deg,#110e08,#181508);
+  padding:1.5rem;text-align:center;
+}
+.hp-ico{font-size:2.5rem;animation:hpSwing 2.5s ease-in-out infinite;}
+@keyframes hpSwing{0%,100%{transform:rotate(-10deg) scale(1);}50%{transform:rotate(10deg) scale(1.1);}}
+.hp-t{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-style:italic;color:var(--gl);}
+.hp-s{font-size:0.58rem;letter-spacing:.07em;line-height:1.85;color:rgba(240,235,224,0.3);max-width:240px;}
+.hp-btn{
+  padding:.6rem 1.6rem;border:1px solid var(--g);background:transparent;
+  color:var(--g);font-family:'Inter',sans-serif;
+  font-size:.5rem;letter-spacing:.22em;text-transform:uppercase;
+  cursor:pointer;transition:all .35s;position:relative;overflow:hidden;
+}
+.hp-btn::before{content:'';position:absolute;inset:0;background:var(--g);transform:translateX(-101%);transition:transform .35s var(--ease);z-index:0;}
+.hp-btn:active::before{transform:translateX(0);}
+.hp-btn:active{color:#050403;}
+.hp-btn span{position:relative;z-index:1;}
+#hpst{font-size:.52rem;letter-spacing:.1em;min-height:1.1em;transition:color .4s;}
+#hpst.ok{color:#82d082;}#hpst.fail{color:#e07070;}#hpst.chk{color:rgba(200,168,75,.5);}
+
+/* video player */
+#vara{aspect-ratio:16/9;display:none;flex-direction:column;align-items:center;justify-content:center;gap:.85rem;background:linear-gradient(135deg,#110e08,#181508);}
+.porb{
+  width:68px;height:68px;border-radius:50%;
+  border:1px solid rgba(200,168,75,.45);
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;background:rgba(200,168,75,.06);
+  position:relative;transition:all .4s;
+}
+.porb::before,.porb::after{content:'';position:absolute;inset:0;border-radius:50%;border:1px solid rgba(200,168,75,.2);}
+.porb::before{animation:pr1 2s ease-out infinite;}
+.porb::after{animation:pr2 2s ease-out infinite .6s;}
+@keyframes pr1{0%{transform:scale(1);opacity:.6;}100%{transform:scale(1.7);opacity:0;}}
+@keyframes pr2{0%{transform:scale(1);opacity:.4;}100%{transform:scale(2.2);opacity:0;}}
+.porb:active{background:rgba(200,168,75,.18);transform:scale(1.08);}
+.porb svg{fill:var(--g);margin-left:4px;}
+.v-note{font-size:.46rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(200,168,75,.28);}
+#vreal{width:100%;aspect-ratio:16/9;display:none;border:none;background:#000;}
+.vcap{padding:.9rem;text-align:center;font-family:'Cormorant Garamond',serif;font-size:.88rem;color:var(--gl);opacity:.4;font-style:italic;}
+
+
+
+/* ═══════ PAGE 3 — PHOTOS FULL ═══════ */
+#pg3{padding:5rem 1rem 5rem;background:radial-gradient(ellipse at 50% 50%,#0e0a04 0%,#050403 70%);}
+
+/* PARALLAX FLOATING PHOTOS */
+.float-photos{position:relative;width:100%;height:260px;overflow:hidden;}
+.fp{
+  position:absolute;
+  background:linear-gradient(135deg,#1a1209,#221809);
+  border:1px solid rgba(200,168,75,0.12);
+  overflow:hidden;
+  transition:transform .1s linear;
+}
+.fp img{width:100%;height:100%;object-fit:cover;}
+.fp-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.3rem;}
+.fp-ph span{font-size:1.2rem;opacity:.12;}
+.fp-ph p{font-size:.36rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gl);opacity:.15;}
+
+/* 3D tilt cards */
+.photo-3d-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:.8rem;}
+.p3d{
+  aspect-ratio:3/4;position:relative;overflow:hidden;
+  border:1px solid rgba(200,168,75,0.12);
+  background:linear-gradient(135deg,#1a1209,#221809);
+  transform-style:preserve-3d;transition:transform .15s ease;
+  cursor:pointer;
+}
+.p3d-in{width:100%;height:100%;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:.3rem;}
+.p3d-ico{font-size:1.4rem;opacity:.14;}
+.p3d-lb{font-size:.36rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gl);opacity:.15;}
+.p3d img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;}
+/* shimmer */
+.p3d::after{content:'';position:absolute;inset:0;background:linear-gradient(110deg,transparent 40%,rgba(200,168,75,0.1) 50%,transparent 60%);transform:translateX(-100%);transition:transform 0s;}
+.p3d:active::after{transform:translateX(100%);transition:transform .6s ease;}
+/* golden corner pins */
+.p3d::before{
+  content:'';position:absolute;inset:0;z-index:2;pointer-events:none;
+  background:
+    linear-gradient(to right,rgba(200,168,75,.4) 1px,transparent 1px) 0 0/8px 8px no-repeat,
+    linear-gradient(to bottom,rgba(200,168,75,.4) 1px,transparent 1px) 0 0/8px 8px no-repeat,
+    linear-gradient(to left,rgba(200,168,75,.4) 1px,transparent 1px) 100% 100%/8px 8px no-repeat,
+    linear-gradient(to top,rgba(200,168,75,.4) 1px,transparent 1px) 100% 100%/8px 8px no-repeat;
+}
+
+
+/* ═══════ PAGE 4 — MESSAGE ═══════ */
+#pg4{padding:5rem 1.4rem 5rem;background:radial-gradient(ellipse at 30% 50%,#180a12 0%,#050403 65%);}
+.msg-q{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(1.3rem,6.5vw,1.9rem);font-weight:300;font-style:italic;
+  color:var(--w);line-height:1.7;margin-bottom:1.5rem;
+  border-left:1px solid rgba(200,168,75,.3);padding-left:1rem;
+}
+.msg-q em{color:var(--g);}
+.msg-cards{display:flex;flex-direction:column;gap:.65rem;}
+.mc{
+  border:1px solid rgba(200,168,75,0.1);padding:1.1rem 1.2rem;
+  background:rgba(200,168,75,0.02);
+  position:relative;overflow:hidden;
+  transition:border-color .3s;
+}
+/* animated left accent */
+.mc::before{content:'';position:absolute;left:0;top:0;bottom:0;width:2px;background:linear-gradient(to bottom,transparent,var(--g),transparent);animation:mcAccent 3s ease-in-out infinite;}
+@keyframes mcAccent{0%,100%{opacity:.2;}50%{opacity:.8;}}
+.mc:nth-child(2)::before{animation-delay:.8s;}
+.mc:nth-child(3)::before{animation-delay:1.6s;}
+.mc:active{border-color:rgba(200,168,75,.3);}
+.mc-lbl{font-size:.42rem;letter-spacing:.26em;text-transform:uppercase;color:var(--g);opacity:.45;margin-bottom:.45rem;}
+.mc-txt{font-family:'Cormorant Garamond',serif;font-size:.9rem;font-style:italic;line-height:1.85;color:rgba(240,235,224,.66);}
+
+/* ═══════ PAGE 5 — WISHES ═══════ */
+#pg5{padding:5rem 1.2rem 5rem;background:#050403;}
+.w-cards{display:flex;flex-direction:column;gap:1px;background:rgba(200,168,75,.06);margin-bottom:.8rem;}
+.wc{padding:1.2rem;background:#050403;position:relative;transition:background .4s;}
+.wc:active{background:rgba(200,168,75,.02);}
+.wc::before{content:'\201C';position:absolute;top:.5rem;left:.8rem;font-family:'Cormorant Garamond',serif;font-size:3rem;color:var(--g);opacity:.07;line-height:1;}
+.wc-txt{font-family:'Cormorant Garamond',serif;font-size:.88rem;line-height:1.9;color:rgba(240,235,224,.7);font-style:italic;margin-bottom:.6rem;}
+.wc-auth{font-size:.44rem;letter-spacing:.2em;text-transform:uppercase;color:var(--g);opacity:.46;}
+.wf{display:flex;flex-direction:column;gap:.55rem;}
+.wf-row{display:flex;gap:.5rem;}
+.wfi{
+  background:transparent;border:none;border-bottom:1px solid rgba(200,168,75,.18);
+  color:var(--w);font-family:'Inter',sans-serif;font-size:.72rem;font-weight:200;
+  padding:.6rem 0;outline:none;transition:border-color .35s;width:100%;letter-spacing:.04em;
+}
+.wfi::placeholder{color:rgba(200,168,75,.22);font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;}
+.wfi:focus{border-bottom-color:var(--g);}
+.ws{
+  padding:.6rem 1.4rem;border:1px solid rgba(200,168,75,.28);background:transparent;
+  color:var(--g);font-family:'Inter',sans-serif;font-size:.48rem;letter-spacing:.22em;text-transform:uppercase;
+  cursor:pointer;transition:all .35s;position:relative;overflow:hidden;white-space:nowrap;
+  margin-top:.3rem;border-radius:1px;
+}
+.ws::before{content:'';position:absolute;inset:0;background:var(--g);transform:translateX(-101%);transition:transform .35s var(--ease);z-index:0;}
+.ws:active::before{transform:translateX(0);}
+.ws:active{color:#050403;}
+.ws span{position:relative;z-index:1;}
+#lwishes{display:flex;flex-direction:column;gap:0;margin-top:.6rem;}
+.lw{border-bottom:1px solid rgba(200,168,75,.06);padding:.65rem 0;animation:lwIn .5s var(--ease);}
+@keyframes lwIn{from{opacity:0;transform:translateY(-8px);}to{opacity:1;transform:translateY(0);}}
+.lwa{font-size:.42rem;letter-spacing:.16em;text-transform:uppercase;color:var(--g);opacity:.42;margin-bottom:.25rem;}
+.lwt{font-family:'Cormorant Garamond',serif;font-size:.85rem;font-style:italic;color:rgba(240,235,224,.6);line-height:1.7;}
+
+/* ── EARPHONE TOAST ── */
+.etoast{
+  position:fixed;bottom:5rem;left:50%;transform:translate(-50%,10px);
+  background:rgba(10,8,5,0.92);border:1px solid rgba(200,168,75,0.2);
+  padding:.55rem 1.2rem;font-size:.52rem;letter-spacing:.12em;
+  color:var(--gl);border-radius:20px;z-index:5000;
+  opacity:0;transition:opacity .4s,transform .4s;
+  pointer-events:none;white-space:nowrap;
+}
+.etoast.ok{border-color:rgba(130,208,130,0.3);color:#82d082;}
+.etoast.warn{border-color:rgba(224,112,112,0.3);color:#e07070;}
+/* music note float */
+.mnote{
+  position:fixed;pointer-events:none;z-index:4000;
+  font-size:1rem;opacity:0;
+  animation:mnFloat 3s ease-out forwards;
+}
+@keyframes mnFloat{
+  0%{opacity:0;transform:translateY(0) scale(.8);}
+  15%{opacity:.7;}
+  100%{opacity:0;transform:translateY(-80px) scale(1.1);}
+}
+
+/* ── MUSIC VISUALIZER BARS ── */
+.mbar{
+  display:inline-block;width:5px;border-radius:3px;
+  background:linear-gradient(to top,var(--g),var(--gl));
+  animation:mbarDance 0.8s ease-in-out infinite alternate;
+}
+.mbar:nth-child(1){height:12px;animation-delay:0s;}
+.mbar:nth-child(2){height:22px;animation-delay:0.1s;}
+.mbar:nth-child(3){height:30px;animation-delay:0.2s;}
+.mbar:nth-child(4){height:18px;animation-delay:0.3s;}
+.mbar:nth-child(5){height:28px;animation-delay:0.15s;}
+.mbar:nth-child(6){height:14px;animation-delay:0.25s;}
+.mbar:nth-child(7){height:24px;animation-delay:0.05s;}
+.mbar:nth-child(8){height:20px;animation-delay:0.35s;}
+@keyframes mbarDance{
+  from{transform:scaleY(0.35);opacity:0.5;}
+  to{transform:scaleY(1);opacity:1;}
+}
+
+/* ── IMAGE HOVER / CLICK ANIMATIONS ── */
+/* Film strip photos */
+.fphoto{
+  transition:transform .35s cubic-bezier(0.34,1.56,0.64,1), box-shadow .35s ease, filter .35s ease;
+  cursor:pointer;
+}
+.fphoto:hover{
+  transform:scale(1.07) translateY(-5px);
+  box-shadow:0 12px 40px rgba(200,168,75,0.25);
+  filter:brightness(1.08);
+  z-index:10;
+  position:relative;
+}
+.fphoto:active{
+  transform:scale(0.96);
+  box-shadow:0 4px 16px rgba(200,168,75,0.15);
+}
+
+/* Grid gallery cards */
+.gc{
+  transition:transform .4s cubic-bezier(0.34,1.56,0.64,1), box-shadow .4s ease;
+  cursor:pointer;
+}
+.gc:hover{
+  transform:scale(1.06) translateY(-4px) rotate(0.5deg);
+  box-shadow:0 16px 48px rgba(200,168,75,0.22);
+  z-index:10;
+}
+.gc:hover img{transform:scale(1.1);}
+.gc:active{transform:scale(0.96) rotate(-0.5deg);}
+/* ripple on gallery click */
+.gc::after{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(circle at center,rgba(200,168,75,0.28) 0%,transparent 70%);
+  opacity:0;transition:opacity .4s;pointer-events:none;z-index:3;
+}
+.gc:active::after{opacity:1;transition:opacity 0s;}
+
+/* 3D photo cards hover */
+.p3d:hover{
+  box-shadow:0 20px 60px rgba(200,168,75,0.2);
+  border-color:rgba(200,168,75,0.3);
+}
+.p3d:hover img{filter:brightness(1.08) saturate(1.1);}
+
+/* Floating parallax photos hover */
+.fp{
+  transition:transform .4s cubic-bezier(0.34,1.56,0.64,1), box-shadow .4s ease, filter .4s ease;
+  cursor:pointer;
+}
+.fp:hover{
+  transform:scale(1.06) rotate(0deg) !important;
+  box-shadow:0 18px 50px rgba(200,168,75,0.25);
+  filter:brightness(1.1);
+  z-index:20;
+}
+.fp:active{transform:scale(0.95) !important;}
+/* golden glow pulse on hover */
+.fp::after{
+  content:'';position:absolute;inset:-3px;
+  border:1px solid rgba(200,168,75,0);
+  transition:border-color .35s, box-shadow .35s;
+  pointer-events:none;
+}
+.fp:hover::after{
+  border-color:rgba(200,168,75,0.4);
+  box-shadow:0 0 20px rgba(200,168,75,0.15);
+}
+
+/* Wish cards hover */
+.wc{
+  transition:transform .3s ease, background .3s ease, box-shadow .3s ease;
+  cursor:default;
+}
+.wc:hover{
+  transform:translateX(6px);
+  background:rgba(200,168,75,0.04);
+  box-shadow:inset 3px 0 0 rgba(200,168,75,0.35);
+}
+
+/* Message cards hover */
+.mc{
+  transition:transform .35s cubic-bezier(0.34,1.56,0.64,1), border-color .35s ease, box-shadow .35s ease;
+}
+.mc:hover{
+  transform:translateY(-4px) scale(1.02);
+  border-color:rgba(200,168,75,0.3);
+  box-shadow:0 10px 32px rgba(200,168,75,0.1);
+}
+
+</style>
+</head>
+<body>
+
+<div id="grain"></div>
+<div id="wipe"></div>
+
+<!-- ═══ PASSWORD GATE ═══ -->
+<div id="gate">
+  <div class="grings">
+    <div class="gr-r"></div><div class="gr-r"></div>
+    <div class="gr-r"></div><div class="gr-r"></div>
+  </div>
+  <div class="gorb"></div>
+  <div class="gate-content">
+    <p class="g-eyebrow">✦ &nbsp; Private Access &nbsp; ✦</p>
+    <h1 class="g-title">For 💖Manisha💖,<br/>on Your Day</h1>
+    <p class="g-sub">Enter the secret code to unlock</p>
+    <div class="pin-ui">
+      <div class="pdots" id="pdots">
+        <div class="pd" id="pd0"></div>
+        <div class="pd" id="pd1"></div>
+        <div class="pd" id="pd2"></div>
+        <div class="pd" id="pd3"></div>
+      </div>
+      <div class="pad">
+        <button class="pk" onclick="kp('1')">1</button>
+        <button class="pk" onclick="kp('2')">2</button>
+        <button class="pk" onclick="kp('3')">3</button>
+        <button class="pk" onclick="kp('4')">4</button>
+        <button class="pk" onclick="kp('5')">5</button>
+        <button class="pk" onclick="kp('6')">6</button>
+        <button class="pk" onclick="kp('7')">7</button>
+        <button class="pk" onclick="kp('8')">8</button>
+        <button class="pk" onclick="kp('9')">9</button>
+        <button class="pk sp" onclick="kclr()">CLR</button>
+        <button class="pk" onclick="kp('0')">0</button>
+        <button class="pk en" onclick="ksub()">↵</button>
+      </div>
+      <p class="p-hint">Hint: birthday date 💛</p>
+      <p class="p-err" id="perr">Wrong code — try again</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ MAIN SITE ═══ -->
+<div id="site">
+
+  <nav id="tnav">
+    <div class="tlogo">For 💖Manisha💖 ✦</div>
+    <div class="tmenu">
+      <button onclick="go(0)" class="on">Home</button>
+      <button onclick="go(1)">Gallery</button>
+      <button onclick="go(2)">Video</button>
+      <button onclick="go(3)">Photos</button>
+      <button onclick="go(4)">Message</button>
+      <button onclick="go(5)">Wishes</button>
+    </div>
+  </nav>
+
+  <div id="bnav">
+    <div class="bd on" onclick="go(0)"></div>
+    <div class="bd" onclick="go(1)"></div>
+    <div class="bd" onclick="go(2)"></div>
+    <div class="bd" onclick="go(3)"></div>
+    <div class="bd" onclick="go(4)"></div>
+    <div class="bd" onclick="go(5)"></div>
+  </div>
+
+  <div id="pctr">01 / 06</div>
+
+  <div id="reel">
+
+    <!-- PAGE 0: HERO -->
+    <div class="pg alive" id="pg0" style="top:0">
+      <div class="hrings"><div class="hr"></div><div class="hr"></div><div class="hr"></div><div class="hr"></div></div>
+      <div id="spwrap" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;"></div>
+      <p class="h-eye up d1">✦ &nbsp; A Very Special Day &nbsp; ✦</p>
+      <h1 class="h-main up d2">Happy<br/><em>Birthday</em></h1>
+      <p class="h-name up d3" style="font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,10vw,3.2rem);font-weight:300;font-style:italic;color:var(--g);letter-spacing:0.08em;line-height:1;margin-bottom:0.2rem;text-shadow:0 0 40px rgba(200,168,75,0.35);">💖Manisha💖</p>
+      <p class="h-yr up d3">Made just for you · 2025</p>
+      <div class="lg h-div up d3"></div>
+      <p class="h-desc up d4">Some people change everything — quietly, beautifully, without even trying. 🌸</p>
+      <button class="h-cta up d5" onclick="go(1)"><span>Open Your Gift</span><span class="arr"> →</span></button>
+      <div class="scue"><span class="st">Scroll</span><div class="sl"></div></div>
+    </div>
+
+    <!-- PAGE 1: GALLERY (animated film strip) -->
+    <div class="pg" id="pg1" style="top:100vh;padding:5rem 0 5rem;">
+      <p class="slb up d1">✦ Memories ✦</p>
+      <h2 class="stl up d2">Our Moments</h2>
+      <div class="lg up d2" style="margin-bottom:1.2rem;"></div>
+
+      <!-- Cinematic film strip -->
+      <div class="film-strip sc">
+        <div class="film-track" id="ft1">
+          <div class="fphoto"><div class="fphoto-inner"><span class="fpi">🖼</span><span class="fpl">Photo 1</span></div></div>
+          <div class="fphoto"><div class="fphoto-inner"><span class="fpi">📷</span><span class="fpl">Photo 2</span></div></div>
+          <div class="fphoto"><div class="fphoto-inner"><span class="fpi">📷</span><span class="fpl">Photo 3</span></div></div>
+          <div class="fphoto"><div class="fphoto-inner"><span class="fpi">🌸</span><span class="fpl">Photo 4</span></div></div>
+          <div class="fphoto"><div class="fphoto-inner"><span class="fpi">✨</span><span class="fpl">Photo 5</span></div></div>
+          <div class="fphoto"><div class="fphoto-inner"><span class="fpi">💛</span><span class="fpl">Photo 6</span></div></div>
+          <!-- duplicated for seamless loop -->
+          <div class="fphoto"><div class="fphoto-inner"><span class="fpi">🖼</span><span class="fpl">Photo 1</span></div></div>
+          <div class="fphoto"><div class="fphoto-inner"><span class="fpi">📷</span><span class="fpl">Photo 2</span></div></div>
+          <div class="fphoto"><div class="fphoto-inner"><span class="fpi">📷</span><span class="fpl">Photo 3</span></div></div>
+          <div class="fphoto"><div class="fphoto-inner"><span class="fpi">🌸</span><span class="fpl">Photo 4</span></div></div>
+          <div class="fphoto"><div class="fphoto-inner"><span class="fpi">✨</span><span class="fpl">Photo 5</span></div></div>
+          <div class="fphoto"><div class="fphoto-inner"><span class="fpi">💛</span><span class="fpl">Photo 6</span></div></div>
+        </div>
+      </div>
+
+      <!-- Grid gallery -->
+      <div style="padding:0 1rem;width:100%;" class="up d3">
+        <div class="gal-grid" id="gg">
+          <div class="gc" id="gc0" onclick="openLB(this)"><div class="gc-in"><span class="gc-ico"><img src="./images/1.jpeg" alt="💖Manisha💖"></span><span class="gc-lb">💖Manisha✨</span></div></div>
+          <div class="gc" id="gc1" onclick="openLB(this)"><div class="gc-in"><span class="gc-ico"><img src="./images/2.jpeg" alt="💖Manisha💖"></span><span class="gc-lb">💖Manisha✨</span></div></div>
+          <div class="gc" id="gc2" onclick="openLB(this)"><div class="gc-in"><span class="gc-ico"><img src="./images/3.jpeg" alt="💖Manisha💖"></span><span class="gc-lb">💖Manisha✨</span></div></div>
+          <div class="gc" id="gc3" onclick="openLB(this)"><div class="gc-in"><span class="gc-ico"><img src="./images/4.jpeg" alt="💖Manisha💖"></span><span class="gc-lb">💖Manisha✨</span></div></div>
+          <div class="gc" id="gc3" onclick="openLB(this)"><div class="gc-in"><span class="gc-ico"><img src="./images/9.jpeg" alt="💖Manisha💖"></span><span class="gc-lb">💖Manisha✨</span></div></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 2: VIDEO + MUSIC -->
+    <div class="pg" id="pg2" style="top:200vh">
+      <p class="slb up d1">✦ A Message ✦</p>
+      <h2 class="stl up d2">For Your Ears, 💖Manisha💖</h2>
+      <div class="lg up d2" style="margin-bottom:1.2rem;"></div>
+      <div class="v-wrap sc">
+        <div class="v-frame">
+
+          <!-- GATE: shown when no earphones -->
+          <div id="hpg">
+            <div class="hp-ico">🎧</div>
+            <p class="hp-t">Headphones on, 💖Manisha💖 💛</p>
+            <p class="hp-s">Connect your wired or Bluetooth earphones — the music &amp; video unlock just for you.</p>
+            <button class="hp-btn" onclick="chkHP()"><span>I'm wearing headphones ✦</span></button>
+            <p id="hpst"></p>
+          </div>
+
+          <!-- UNLOCKED: music visualizer + video player -->
+          <div id="vara" style="display:none;aspect-ratio:16/9;flex-direction:column;align-items:center;justify-content:center;gap:.8rem;background:linear-gradient(135deg,#110e08,#181508);padding:1.2rem;">
+            <!-- Music playing indicator -->
+            <div id="music-panel" style="display:flex;flex-direction:column;align-items:center;gap:.6rem;">
+              <div style="font-size:2.2rem;animation:hpSwing 2.5s ease-in-out infinite;">🎵</div>
+              <p style="font-family:'Cormorant Garamond',serif;font-size:.95rem;font-style:italic;color:var(--gl);text-align:center;line-height:1.7;">
+                Music playing just for you, <em style="color:var(--g);">💖Manisha💖</em> 🎶
+              </p>
+              <div id="music-vis" style="display:flex;gap:4px;align-items:flex-end;height:30px;">
+                <span class="mbar"></span><span class="mbar"></span><span class="mbar"></span>
+                <span class="mbar"></span><span class="mbar"></span><span class="mbar"></span>
+                <span class="mbar"></span><span class="mbar"></span>
+              </div>
+            </div>
+            <!-- Video play button (shown only if VIDEO_SRC is set) -->
+            <div id="vid-play-area" style="display:none;flex-direction:column;align-items:center;gap:.5rem;margin-top:.2rem;">
+              <div class="porb" onclick="playVid()">
+                <svg width="18" height="18" viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+              </div>
+              <p class="v-note">Tap to play your special video</p>
+            </div>
+          </div>
+
+          <!-- Actual video element -->
+          <video id="vreal" controls style="width:100%;aspect-ratio:16/9;display:none;border:none;background:#000;"><source src="./images/v.mp4" type="video/mp4"></video>
+
+          <p class="vcap">"Every note &amp; frame of this was chosen with you in mind, 💖Manisha💖."</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 3: PHOTOS FULL (3D + parallax) -->
+    <div class="pg" id="pg3" style="top:300vh">
+      <p class="slb up d1">✦ Gallery ✦</p>
+      <h2 class="stl up d2">Beautiful Moments</h2>
+      <div class="lg up d2" style="margin-bottom:.8rem;"></div>
+
+      <!-- Floating parallax photos -->
+      <div class="float-photos sc" id="fp-area">
+        <div class="fp" style="left:5%;top:5%;width:38%;height:52%;transform:rotate(-3deg);" id="fp0">
+          <div class="fp-ph"><span>📷</span><p>Memory</p></div>
+        </div>
+        <div class="fp" style="left:55%;top:2%;width:42%;height:48%;transform:rotate(2.5deg);" id="fp1">
+          <div class="fp-ph"><span>🌸</span><p>Memory</p></div>
+        </div>
+        <div class="fp" style="left:10%;top:48%;width:34%;height:48%;transform:rotate(1.5deg);" id="fp2">
+          <div class="fp-ph"><span>✨</span><p>Memory</p></div>
+        </div>
+        <div class="fp" style="left:50%;top:45%;width:44%;height:50%;transform:rotate(-2deg);" id="fp3">
+          <div class="fp-ph"><span>💛</span><p>Memory</p></div>
+        </div>
+      </div>
+
+      <!-- 3D tilt grid -->
+      <div style="padding:0 1rem;width:100%;" class="up d4">
+        <div class="photo-3d-grid" id="p3dg">
+          <div class="p3d" id="p3d0" ontouchstart="tilt3d(this,event)" ontouchend="untilt(this)"><div class="p3d-in"><span class="p3d-ico">💖Manisha✨</span><span class="p3d-lb"><img src="./images/5.jpeg" alt="💖Manisha✨"></span></div></div>
+          <div class="p3d" id="p3d1" ontouchstart="tilt3d(this,event)" ontouchend="untilt(this)"><div class="p3d-in"><span class="p3d-ico">💖Manisha✨</span><span class="p3d-lb"><img src="./images/6.jpeg" alt="💖M💖Manisha✨anisha✨"></span></div></div>
+          <div class="p3d" id="p3d2" ontouchstart="tilt3d(this,event)" ontouchend="untilt(this)"><div class="p3d-in"><span class="p3d-ico">💖Manisha✨</span><span class="p3d-lb"><img src="./images/7.jpeg" alt="💖Manisha✨"></span></div></div>
+          <div class="p3d" id="p3d3" ontouchstart="tilt3d(this,event)" ontouchend="untilt(this)"><div class="p3d-in"><span class="p3d-ico">💖Manisha✨</span><span class="p3d-lb"><img src="./images/8.jpeg" alt="💖Manisha💖"></span></div></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- PAGE 4: MESSAGE -->
+    <div class="pg" id="pg4" style="top:400vh">
+      <p class="slb up d1">✦ For You ✦</p>
+      <div style="width:100%;padding:0 1.4rem;">
+        <div class="msg-q up d2">"<em>💖Manisha💖</em> — you are not just someone I admire. You are the thought I return to, <em>quietly, like sunlight finds water.</em>"</div>
+        <div class="lg up d3" style="margin-bottom:1.2rem;margin-left:0;"></div>
+        <div class="msg-cards">
+          <div class="mc sc" style="transition-delay:.18s">
+            <p class="mc-lbl">A wish</p>
+            <p class="mc-txt">May every corner of this year hold something that makes your soul sing. You deserve all of it.</p>
+          </div>
+          <div class="mc sc" style="transition-delay:.34s">
+            <p class="mc-lbl">A truth</p>
+            <p class="mc-txt">In a world full of noise, you are my favourite kind of quiet. Happy Birthday.</p>
+          </div>
+          <div class="mc sc" style="transition-delay:.5s">
+            <p class="mc-lbl">A promise</p>
+            <p class="mc-txt">I'll keep showing up for you, in big ways and small ones, for as long as you'll let me. 💛</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- PAGE 5: WISHES -->
+    <div class="pg" id="pg5" style="top:500vh">
+      <p class="slb up d1">✦ Wishes ✦</p>
+      <h2 class="stl up d2">Wishes for 💖Manisha💖 💛</h2>
+      <div class="lg up d2" style="margin-bottom:.9rem;"></div>
+      <div style="width:100%;padding:0 1.2rem;">
+        <div class="w-cards up d3">
+          <div class="wc"><p class="wc-txt">You light up every room, and my world has never been brighter since you entered it.</p><p class="wc-auth">— With all my heart</p></div>
+          <div class="wc"><p class="wc-txt">Here's to your laughter, your kindness, and the quiet magic you carry everywhere.</p><p class="wc-auth">— Forever yours</p></div>
+          <div class="wc"><p class="wc-txt">May this birthday begin a year as wonderful and extraordinary as you truly are.</p><p class="wc-auth">— Always thinking of you</p></div>
+        </div>
+        <div class="wf up d4" style="margin-top:.7rem;">
+          <div class="wf-row">
+            <input class="wfi" id="wn" type="text" placeholder="Your name"/>
+          </div>
+          <div class="wf-row">
+            <input class="wfi" id="wm" type="text" placeholder="Write a wish…"/>
+            <button class="ws" onclick="addW()"><span>Send ✦</span></button>
+          </div>
+        </div>
+        <div id="lwishes"></div>
+      </div>
+    </div>
+
+  </div><!-- #reel -->
+
+  <!-- LIGHTBOX -->
+  <div id="lb">
+    <button id="lb-close" onclick="closeLB()">✕</button>
+    <img id="lb-img" src="" alt=""/>
+    <p style="font-size:.48rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(200,168,75,.35);">Tap ✕ to close</p>
+  </div>
+
+  <div class="etoast" id="etoast"></div>
+  <div id="mnotes"></div>
+</div><!-- #site -->
+
+<script>
+/* ── SPARKS ── */
+const spw=document.getElementById('spwrap');
+for(let i=0;i<24;i++){
+  const s=document.createElement('div');s.className='sp';
+  s.style.cssText=`left:${Math.random()*100}%;bottom:${Math.random()*20}%;
+    width:${1+Math.random()*1.8}px;height:${1+Math.random()*1.8}px;border-radius:50%;
+    background:var(--g);
+    animation-duration:${5+Math.random()*9}s;
+    animation-delay:${Math.random()*9}s;
+    --tx:${(Math.random()-.5)*100}px;`;
+  spw.appendChild(s);
+}
+
+/* ── PIN GATE ── */
+const SECRET='1234'; // ← change to birthday date e.g. '1506'
+let pin='';
+function kp(d){if(pin.length>=4)return;pin+=d;udots();if(pin.length===4)setTimeout(ksub,200);}
+function kclr(){pin='';udots();document.getElementById('perr').classList.remove('on');}
+function udots(){for(let i=0;i<4;i++)document.getElementById('pd'+i).classList.toggle('f',i<pin.length);}
+function ksub(){
+  if(pin===SECRET){
+    document.getElementById('gate').classList.add('exit');
+    // setTimeout(()=>{document.getElementById('gate').style.display='none';document.getElementById('site').classList.add('show');},950);
+    setTimeout(async ()=>{
+
+  document.getElementById('gate').style.display='none';
+  document.getElementById('site').classList.add('show');
+
+  /* Check headphones after password */
+  const found = await checkAudioDevices();
+
+  if(found){
+
+    earphoneConnected = true;
+
+    showMusicUI(true);
+
+    await startBackgroundMusic();
+
+    showEarphoneToast(
+      '🎧 Earphones detected — music started',
+      'ok'
+    );
+
+  }else{
+
+    earphoneConnected = false;
+
+    showMusicUI(false);
+
+    showEarphoneToast(
+      '🔇 Connect earphones to play music',
+      'warn'
+    );
+  }
+
+},950);
+  } else {
+    document.getElementById('perr').classList.add('on');
+    const dt=document.getElementById('pdots');dt.classList.add('shake');
+    setTimeout(()=>{dt.classList.remove('shake');document.getElementById('perr').classList.remove('on');pin='';udots();},1600);
+  }
+}
+document.addEventListener('keydown',e=>{
+  if(document.getElementById('site').classList.contains('show'))return;
+  if(e.key>='0'&&e.key<='9')kp(e.key);
+  else if(e.key==='Backspace')kclr();
+  else if(e.key==='Enter')ksub();
+});
+
+/* ── NAVIGATION ── */
+const pgs=document.querySelectorAll('.pg');
+const bds=document.querySelectorAll('.bd');
+const nbs=document.querySelectorAll('.tmenu button');
+const reel=document.getElementById('reel');
+const wipe=document.getElementById('wipe');
+const pctr=document.getElementById('pctr');
+let cur=0,locked=false;
+
+function go(idx){
+  if(idx===cur||locked)return;locked=true;
+  wipe.className='in';
+  setTimeout(()=>{
+    pgs[cur].classList.remove('alive');bds[cur].classList.remove('on');nbs[cur].classList.remove('on');
+    cur=idx;reel.style.transform=`translateY(-${cur*100}vh)`;
+    pctr.textContent=`0${cur+1} / 06`;
+    bds[cur].classList.add('on');nbs[cur].classList.add('on');
+    wipe.className='out';
+    setTimeout(()=>{wipe.className='';pgs[cur].classList.add('alive');locked=false;},580);
+  },530);
+}
+
+/* scroll */
+let sl=false;
+window.addEventListener('wheel',e=>{if(sl||locked)return;sl=true;if(e.deltaY>15&&cur<pgs.length-1)go(cur+1);else if(e.deltaY<-15&&cur>0)go(cur-1);setTimeout(()=>sl=false,1300);},{passive:true});
+/* swipe */
+let ty=0;
+window.addEventListener('touchstart',e=>{ty=e.touches[0].clientY;},{passive:true});
+window.addEventListener('touchend',e=>{const d=ty-e.changedTouches[0].clientY;if(Math.abs(d)<60)return;if(d>0&&cur<pgs.length-1)go(cur+1);else if(d<0&&cur>0)go(cur-1);},{passive:true});
+/* keys */
+window.addEventListener('keydown',e=>{if(!document.getElementById('site').classList.contains('show'))return;if(e.key==='ArrowDown'&&cur<pgs.length-1)go(cur+1);else if(e.key==='ArrowUp'&&cur>0)go(cur-1);});
+
+/* ── PARALLAX FLOATING PHOTOS on page 3 ── */
+window.addEventListener('deviceorientation',e=>{
+  const x=e.gamma/20,y=e.beta/20;
+  ['fp0','fp1','fp2','fp3'].forEach((id,i)=>{
+    const el=document.getElementById(id);if(!el)return;
+    const depth=(i%2===0)?1.5:1;
+    const base=el.style.transform.replace(/translate\([^)]+\)/,'').trim()||'';
+    el.style.transform=`${base} translate(${x*depth}px,${y*depth}px)`;
+  });
+},{passive:true});
+
+/* ── 3D TILT ── */
+function tilt3d(el,e){
+  const r=el.getBoundingClientRect();
+  const t=e.touches[0];
+  const cx=r.left+r.width/2,cy=r.top+r.height/2;
+  const rx=((t.clientY-cy)/r.height)*20;
+  const ry=(-(t.clientX-cx)/r.width)*20;
+  el.style.transform=`perspective(400px) rotateX(${rx}deg) rotateY(${ry}deg) scale(1.04)`;
+}
+function untilt(el){el.style.transform='';}
+
+/* ── GALLERY UPLOAD (film strip + grid) ── */
+let gSlot=0;
+function openLB(el){
+  const img=el.querySelector('img');
+  if(!img)return;
+  document.getElementById('lb-img').src=img.src;
+  document.getElementById('lb').classList.add('open');
+}
+function closeLB(){document.getElementById('lb').classList.remove('open');}
+
+
+
+/* ══════════════════════════════════════════
+   AUDIO / VIDEO ENGINE
+   ══════════════════════════════════════════
+   HOW TO USE:
+   1. Set MUSIC_SRC to your .mp3 / .ogg URL
+   2. Set VIDEO_SRC to your .mp4 URL (optional)
+   3. When Bluetooth / wired earphones connect
+      → music starts automatically
+      → video play button appears (if VIDEO_SRC set)
+   ══════════════════════════════════════════ */
+/* ═══════════════════════════════════════
+   AUDIO / VIDEO ENGINE
+   ═══════════════════════════════════════ */
+
+const MUSIC_SRC = './images/song.mp3';
+const VIDEO_SRC = './images/v.mp4';
+
+/* ── Background Music ── */
+const bgMusic = new Audio(MUSIC_SRC);
+bgMusic.loop = true;
+bgMusic.volume = 0.55;
+
+/* ── Video Element ── */
+const videoPlayer = document.getElementById('vreal');
+
+let earphoneConnected = false;
+
+/* ── Detect headphone/bluetooth names ── */
+function isAudioOutputHeadphone(label){
+  const l = (label || '').toLowerCase();
+
+  return [
+    'headphone','earphone','headset','airpod',
+    'earbud','buds','bluetooth','wired',
+    'boat','jbl','sony','bose','realme',
+    'oneplus','noise','skullcandy','beats'
+  ].some(k => l.includes(k));
+}
+
+/* ── Check audio devices ── */
+async function checkAudioDevices(){
+
+  /* Mobile browsers usually block labels */
+  if(!navigator.mediaDevices?.enumerateDevices){
+    return true;
+  }
+
+  try{
+    const devices = await navigator.mediaDevices.enumerateDevices();
+
+    const outputs = devices.filter(d => d.kind === 'audiooutput');
+
+    /* If labels unavailable, trust user */
+    if(outputs.length === 0 || outputs.every(d => !d.label)){
+      return true;
+    }
+
+    return outputs.some(d => isAudioOutputHeadphone(d.label));
+
+  }catch(err){
+    return true;
+  }
+}
+
+/* ── Start music ── */
+async function startBackgroundMusic(){
+
+  if(!MUSIC_SRC) return;
+
+  try{
+    await bgMusic.play();
+  }catch(err){
+
+    /* Browser autoplay protection */
+    const unlock = async () => {
+      try{
+        await bgMusic.play();
+      }catch(e){}
+    };
+
+    document.addEventListener('click', unlock, { once:true });
+    document.addEventListener('touchstart', unlock, { once:true });
+  }
+}
+
+/* ── Stop music ── */
+function stopBackgroundMusic(){
+  bgMusic.pause();
+}
+
+/* ── Show music/video UI ── */
+function showMusicUI(show){
+
+  const hpg  = document.getElementById('hpg');
+  const vara = document.getElementById('vara');
+  const vpa  = document.getElementById('vid-play-area');
+
+  if(show){
+
+    hpg.style.display = 'none';
+    vara.style.display = 'flex';
+
+    if(vpa){
+      vpa.style.display = VIDEO_SRC ? 'flex' : 'none';
+    }
+
+  }else{
+
+    hpg.style.display = 'flex';
+    vara.style.display = 'none';
+
+    videoPlayer.pause();
+    videoPlayer.style.display = 'none';
+
+    stopBackgroundMusic();
+  }
+}
+
+/* ── Video Play ── */
+function playVid(){
+
+  if(!VIDEO_SRC) return;
+
+  /* Pause background music */
+  bgMusic.pause();
+
+  document.getElementById('vara').style.display = 'none';
+
+  videoPlayer.src = VIDEO_SRC;
+  videoPlayer.style.display = 'block';
+
+  videoPlayer.play();
+
+  /* Resume music after video end */
+  videoPlayer.onended = async () => {
+
+    videoPlayer.style.display = 'none';
+
+    document.getElementById('vara').style.display = 'flex';
+
+    if(earphoneConnected){
+      await startBackgroundMusic();
+    }
+  };
+
+  /* Resume if paused */
+  videoPlayer.onpause = async () => {
+
+    if(videoPlayer.currentTime < videoPlayer.duration){
+
+      if(earphoneConnected){
+        await startBackgroundMusic();
+      }
+    }
+  };
+}
+
+/* ── Toast ── */
+function showEarphoneToast(msg,type){
+
+  const t = document.getElementById('etoast');
+
+  t.textContent = msg;
+  t.className = 'etoast ' + type;
+
+  t.style.opacity = '1';
+  t.style.transform = 'translateY(0)';
+
+  setTimeout(()=>{
+    t.style.opacity='0';
+    t.style.transform='translateY(10px)';
+  },3000);
+}
+
+/* ── Manual Check Button ── */
+async function chkHP(){
+
+  const st = document.getElementById('hpst');
+
+  st.textContent = 'Checking...';
+
+  const found = await checkAudioDevices();
+
+  if(found){
+
+    earphoneConnected = true;
+
+    st.textContent =
+      '✓ Earphones detected — enjoy, 💖Manisha💖!';
+
+    st.className = 'ok';
+
+    showMusicUI(true);
+
+    await startBackgroundMusic();
+
+  }else{
+
+    earphoneConnected = false;
+
+    st.textContent =
+      '✗ No earphones found — connect Bluetooth or wired earphones.';
+
+    st.className = 'fail';
+
+    showMusicUI(false);
+
+    stopBackgroundMusic();
+  }
+}
+
+/* ── Auto Detect Connect/Disconnect ── */
+if(navigator.mediaDevices){
+
+  navigator.mediaDevices.addEventListener(
+    'devicechange',
+    async ()=>{
+
+      const found = await checkAudioDevices();
+
+      if(found && !earphoneConnected){
+
+        earphoneConnected = true;
+
+        showMusicUI(true);
+
+        await startBackgroundMusic();
+
+        showEarphoneToast(
+          '🎧 Earphones connected — music started',
+          'ok'
+        );
+
+      }else if(!found && earphoneConnected){
+
+        earphoneConnected = false;
+
+        stopBackgroundMusic();
+
+        showMusicUI(false);
+
+        showEarphoneToast(
+          '🔇 Earphones disconnected — music stopped',
+          'warn'
+        );
+      }
+    }
+  );
+}
+
+/* ── Floating Notes ── */
+const notes = ['♪','♫','♬','♩'];
+
+function spawnNote(){
+
+  if(!earphoneConnected || bgMusic.paused) return;
+
+  const n = document.createElement('div');
+
+  n.className = 'mnote';
+
+  n.textContent =
+    notes[Math.floor(Math.random()*notes.length)];
+
+  n.style.cssText = `
+    left:${10+Math.random()*80}%;
+    bottom:${60+Math.random()*15}%;
+    color:rgba(200,168,75,${.3+Math.random()*.4});
+  `;
+
+  document.getElementById('mnotes').appendChild(n);
+
+  setTimeout(()=>n.remove(),3000);
+}
+
+setInterval(spawnNote,1800);
+
+</script>
+</body>
+</html>
